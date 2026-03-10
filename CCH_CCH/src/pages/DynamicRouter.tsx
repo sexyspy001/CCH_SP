@@ -1,55 +1,76 @@
-import { useParams, Navigate } from 'react-router-dom';
-import { platforms, allServicePages, locations, blogs } from '../data';
-import PlatformPage from './PlatformPage';
-import ServicePage from './ServicePage';
-import LocationPage from './LocationPage';
-import BlogPost from './BlogPost';
+import { useParams } from "react-router-dom";
+import { platforms, allServicePages, locations, blogs } from "../data";
+
+import PlatformPage from "./PlatformPage";
+import ServicePage from "./ServicePage";
+import LocationPage from "./LocationPage";
+import BlogPost from "./BlogPost";
 
 export default function DynamicRouter() {
+
   const { slug } = useParams<{ slug: string }>();
 
-  if (!slug) return <Navigate to="/" />;
+  if (!slug) return null;
 
-  // Check if it's a platform page
+  // PLATFORM PAGE
   const platform = platforms.find((p) => p.slug === slug);
+
   if (platform) {
     return <PlatformPage platform={platform} />;
   }
 
-  // Check if it's a service page
+  // SERVICE PAGE
   const service = allServicePages.find((s) => s.slug === slug);
+
   if (service) {
-    const parentPlatform = platforms.find(p => p.id === service.platformId);
+    const parentPlatform = platforms.find(
+      (p) => p.id === service.platformId
+    );
+
     return <ServicePage service={service} platform={parentPlatform} />;
   }
 
-  // Check if it's a blog page
+  // BLOG PAGE
   const blog = blogs.find((b) => b.slug === slug);
+
   if (blog) {
     return <BlogPost blog={blog} />;
   }
 
-  // Check if it's a location page (e.g., amazon-cataloging-service-delhi)
-  // We need to find the longest matching service slug
-  let matchedService = null;
-  let matchedLocation = null;
+  // LOCATION PAGE
+  const locationMatch = locations.find((loc) =>
+    slug.endsWith("-" + loc)
+  );
 
-  for (const s of allServicePages) {
-    if (slug.startsWith(s.slug + '-')) {
-      const potentialLocation = slug.replace(s.slug + '-', '');
-      if (locations.includes(potentialLocation)) {
-        matchedService = s;
-        matchedLocation = potentialLocation;
-        break;
-      }
+  if (locationMatch) {
+
+    const serviceSlug = slug.replace("-" + locationMatch, "");
+
+    const matchedService = allServicePages.find(
+      (s) => s.slug === serviceSlug
+    );
+
+    if (matchedService) {
+
+      const parentPlatform = platforms.find(
+        (p) => p.id === matchedService.platformId
+      );
+
+      return (
+        <LocationPage
+          service={matchedService}
+          platform={parentPlatform}
+          location={locationMatch}
+        />
+      );
     }
   }
 
-  if (matchedService && matchedLocation) {
-    const parentPlatform = platforms.find(p => p.id === matchedService.platformId);
-    return <LocationPage service={matchedService} platform={parentPlatform} location={matchedLocation} />;
-  }
-
-  // If no match, redirect to home or 404
-  return <Navigate to="/" />;
+  // 404 PAGE
+  return (
+    <div style={{ padding: "80px", textAlign: "center" }}>
+      <h1>404 - Page Not Found</h1>
+      <p>The page you are looking for does not exist.</p>
+    </div>
+  );
 }
