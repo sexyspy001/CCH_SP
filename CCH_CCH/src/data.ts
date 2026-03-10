@@ -8,81 +8,88 @@ export const ecommercePlatforms = [
   { id: 'jiomart', name: 'JioMart', slug: 'jiomart-seller-services' },
   { id: 'tata-cliq', name: 'Tata Cliq', slug: 'tata-cliq-seller-services' },
   { id: 'nykaa', name: 'Nykaa', slug: 'nykaa-seller-services' },
-  { id: 'etsy-ebay', name: 'Etsy & eBay', slug: 'etsy-ebay-seller-services' },
+  { id: 'etsy-ebay', name: 'Etsy & eBay', slug: 'etsy-ebay-seller-services' }
 ];
 
 export const quickCommercePlatforms = [
   { id: 'blinkit', name: 'Blinkit', slug: 'blinkit-seller-onboarding' },
   { id: 'zepto', name: 'Zepto', slug: 'zepto-seller-onboarding' },
   { id: 'instamart', name: 'Swiggy Instamart', slug: 'instamart-seller-onboarding' },
-  { id: 'flipkart-minutes', name: 'Flipkart Minutes', slug: 'flipkart-minutes-seller-onboarding' },
+  { id: 'flipkart-minutes', name: 'Flipkart Minutes', slug: 'flipkart-minutes-seller-onboarding' }
 ];
 
 export const otherPlatforms = [
   { id: 'marketing', name: 'Digital Marketing', slug: 'digital-marketing-services' },
-  { id: 'business', name: 'Business & Compliance', slug: 'business-compliance-services' },
+  { id: 'business', name: 'Business & Compliance', slug: 'business-compliance-services' }
 ];
 
-export const platforms = [...ecommercePlatforms, ...quickCommercePlatforms, ...otherPlatforms];
+export const platforms = [
+  ...ecommercePlatforms,
+  ...quickCommercePlatforms,
+  ...otherPlatforms
+];
 
 export const allServicePages = [
-  // Amazon Services
-  { platformId: 'amazon', name: 'Cataloging Service', slug: 'amazon-cataloging-service' },
-  { platformId: 'amazon', name: 'Listing Optimization', slug: 'amazon-listing-optimization-service' },
-  { platformId: 'amazon', name: 'Product Listing', slug: 'amazon-product-listing-service' },
-  { platformId: 'amazon', name: 'Account Management', slug: 'amazon-account-management-service' },
-  { platformId: 'amazon', name: 'Advertising Optimization', slug: 'amazon-advertising-optimization-service' },
-  { platformId: 'amazon', name: 'PPC Management', slug: 'amazon-ppc-management-service' },
-  { platformId: 'amazon', name: 'A+ Content', slug: 'amazon-a-plus-content-service' },
-  { platformId: 'amazon', name: 'Brand Store Design', slug: 'amazon-brand-store-design-service' },
-  { platformId: 'amazon', name: 'Product Imaging', slug: 'amazon-product-imaging-service' },
-  { platformId: 'amazon', name: 'Account Reinstatement', slug: 'amazon-account-reinstatement-service' },
-  { platformId: 'amazon', name: 'Suspension Appeal', slug: 'amazon-suspension-appeal-service' },
-  { platformId: 'amazon', name: 'FBA Prep & Packaging', slug: 'amazon-fba-prep-packaging-service' },
-  { platformId: 'amazon', name: 'Inventory Management', slug: 'amazon-inventory-management-service' },
-  { platformId: 'amazon', name: 'Storage Service', slug: 'amazon-storage-service' },
-  { platformId: 'amazon', name: 'International Shipping', slug: 'amazon-international-shipping-service' },
-  { platformId: 'amazon', name: 'International Returns', slug: 'amazon-international-returns-service' },
-  { platformId: 'amazon', name: 'Domestic Shipping', slug: 'amazon-domestic-shipping-service' },
-  { platformId: 'amazon', name: 'IP Accelerator Support', slug: 'amazon-ip-accelerator-support' },
-  { platformId: 'amazon', name: 'Accounting Service', slug: 'amazon-accounting-service' },
-  { platformId: 'amazon', name: 'Tax Support', slug: 'amazon-tax-support-service' },
-  { platformId: 'amazon', name: 'Seller Training', slug: 'amazon-seller-training-service' },
-  { platformId: 'amazon', name: 'Seller Lending Support', slug: 'amazon-seller-lending-support' },
-  { platformId: 'amazon', name: 'Compliance Service', slug: 'amazon-compliance-service' },
-  
-  // Flipkart Services
-  { platformId: 'flipkart', name: 'Cataloging Service', slug: 'flipkart-cataloging-service' },
-  { platformId: 'flipkart', name: 'Product Listing', slug: 'flipkart-product-listing-service' },
-  { platformId: 'flipkart', name: 'Account Management', slug: 'flipkart-account-management-service' },
-  { platformId: 'flipkart', name: 'Advertising Service', slug: 'flipkart-advertising-service' },
-  { platformId: 'flipkart', name: 'FBF Onboarding', slug: 'flipkart-fbf-onboarding-service' },
-  { platformId: 'flipkart', name: 'Account Reinstatement', slug: 'flipkart-account-reinstatement-service' },
-  { platformId: 'flipkart', name: 'Product Imaging', slug: 'flipkart-product-imaging-service' },
-  { platformId: 'flipkart', name: 'Inventory Management', slug: 'flipkart-inventory-management-service' },
-  { platformId: 'flipkart', name: 'Compliance Service', slug: 'flipkart-compliance-service' },
-  { platformId: 'flipkart', name: 'Liquidation Service', slug: 'flipkart-liquidation-service' },
 
-  // Meesho Services
-  { platformId: 'meesho', name: 'Cataloging Service', slug: 'meesho-cataloging-service' },
-  { platformId: 'meesho', name: 'Product Listing', slug: 'meesho-product-listing-service' },
-  { platformId: 'meesho', name: 'Account Management', slug: 'meesho-account-management-service' },
-  { platformId: 'meesho', name: 'Advertising Service', slug: 'meesho-advertising-service' },
-  { platformId: 'meesho', name: 'Logistics Support', slug: 'meesho-logistics-support-service' },
+  // AMAZON SERVICES
+  { platformId: 'amazon', name: 'Amazon Cataloging Service', slug: 'amazon-cataloging-service' },
+  { platformId: 'amazon', name: 'Amazon Listing Optimization', slug: 'amazon-listing-optimization-service' },
+  { platformId: 'amazon', name: 'Amazon Product Listing', slug: 'amazon-product-listing-service' },
+  { platformId: 'amazon', name: 'Amazon Account Management', slug: 'amazon-account-management-service' },
+  { platformId: 'amazon', name: 'Amazon Advertising Optimization', slug: 'amazon-advertising-optimization-service' },
+  { platformId: 'amazon', name: 'Amazon PPC Management', slug: 'amazon-ppc-management-service' },
+  { platformId: 'amazon', name: 'Amazon A+ Content Design', slug: 'amazon-a-plus-content-service' },
+  { platformId: 'amazon', name: 'Amazon Brand Store Design', slug: 'amazon-brand-store-design-service' },
+  { platformId: 'amazon', name: 'Amazon Product Imaging', slug: 'amazon-product-imaging-service' },
+  { platformId: 'amazon', name: 'Amazon Account Reinstatement', slug: 'amazon-account-reinstatement-service' },
+  { platformId: 'amazon', name: 'Amazon Suspension Appeal', slug: 'amazon-suspension-appeal-service' },
+  { platformId: 'amazon', name: 'Amazon FBA Prep Service', slug: 'amazon-fba-prep-packaging-service' },
+  { platformId: 'amazon', name: 'Amazon Inventory Management', slug: 'amazon-inventory-management-service' },
+  { platformId: 'amazon', name: 'Amazon Storage Services', slug: 'amazon-storage-service' },
+  { platformId: 'amazon', name: 'Amazon International Shipping', slug: 'amazon-international-shipping-service' },
+  { platformId: 'amazon', name: 'Amazon International Returns', slug: 'amazon-international-returns-service' },
+  { platformId: 'amazon', name: 'Amazon Domestic Shipping', slug: 'amazon-domestic-shipping-service' },
+  { platformId: 'amazon', name: 'Amazon IP Accelerator Support', slug: 'amazon-ip-accelerator-support' },
+  { platformId: 'amazon', name: 'Amazon Accounting Services', slug: 'amazon-accounting-service' },
+  { platformId: 'amazon', name: 'Amazon Tax Support', slug: 'amazon-tax-support-service' },
+  { platformId: 'amazon', name: 'Amazon Seller Training', slug: 'amazon-seller-training-service' },
+  { platformId: 'amazon', name: 'Amazon Seller Lending Support', slug: 'amazon-seller-lending-support' },
+  { platformId: 'amazon', name: 'Amazon Compliance Service', slug: 'amazon-compliance-service' },
 
-  // Digital Marketing Services
+  // FLIPKART SERVICES
+  { platformId: 'flipkart', name: 'Flipkart Cataloging Service', slug: 'flipkart-cataloging-service' },
+  { platformId: 'flipkart', name: 'Flipkart Product Listing', slug: 'flipkart-product-listing-service' },
+  { platformId: 'flipkart', name: 'Flipkart Account Management', slug: 'flipkart-account-management-service' },
+  { platformId: 'flipkart', name: 'Flipkart Advertising Service', slug: 'flipkart-advertising-service' },
+  { platformId: 'flipkart', name: 'Flipkart FBF Onboarding', slug: 'flipkart-fbf-onboarding-service' },
+  { platformId: 'flipkart', name: 'Flipkart Account Reinstatement', slug: 'flipkart-account-reinstatement-service' },
+  { platformId: 'flipkart', name: 'Flipkart Product Imaging', slug: 'flipkart-product-imaging-service' },
+  { platformId: 'flipkart', name: 'Flipkart Inventory Management', slug: 'flipkart-inventory-management-service' },
+  { platformId: 'flipkart', name: 'Flipkart Compliance Service', slug: 'flipkart-compliance-service' },
+  { platformId: 'flipkart', name: 'Flipkart Liquidation Service', slug: 'flipkart-liquidation-service' },
+
+  // MEESHO SERVICES
+  { platformId: 'meesho', name: 'Meesho Cataloging Service', slug: 'meesho-cataloging-service' },
+  { platformId: 'meesho', name: 'Meesho Product Listing', slug: 'meesho-product-listing-service' },
+  { platformId: 'meesho', name: 'Meesho Account Management', slug: 'meesho-account-management-service' },
+  { platformId: 'meesho', name: 'Meesho Advertising Service', slug: 'meesho-advertising-service' },
+  { platformId: 'meesho', name: 'Meesho Logistics Support', slug: 'meesho-logistics-support-service' },
+
+  // DIGITAL MARKETING SERVICES
   { platformId: 'marketing', name: 'SEO Services for Ecommerce', slug: 'seo-services-for-ecommerce' },
   { platformId: 'marketing', name: 'Amazon SEO Services', slug: 'amazon-seo-services' },
   { platformId: 'marketing', name: 'Marketplace PPC Management', slug: 'marketplace-ppc-management' },
   { platformId: 'marketing', name: 'Social Media Marketing', slug: 'social-media-marketing-for-ecommerce' },
   { platformId: 'marketing', name: 'Email Marketing', slug: 'email-marketing-for-ecommerce' },
   { platformId: 'marketing', name: 'Content Marketing', slug: 'content-marketing-for-ecommerce' },
+  { platformId: 'marketing', name: 'Ecommerce Growth Services', slug: 'ecommerce-growth-services' },
+  { platformId: 'marketing', name: 'Marketplace Management Services', slug: 'marketplace-management-services' },
 
-  // Business & Compliance Services
-  { platformId: 'business', name: 'GST Registration', slug: 'gst-registration-for-ecommerce-sellers' },
-  { platformId: 'business', name: 'GST Compliance', slug: 'gst-compliance-for-sellers' },
-  { platformId: 'business', name: 'PPOB/APOB Registration', slug: 'ppob-apob-registration-service' },
-  { platformId: 'business', name: 'Ecommerce Consulting', slug: 'ecommerce-business-consulting' },
+  // BUSINESS SERVICES
+  { platformId: 'business', name: 'GST Registration for Ecommerce', slug: 'gst-registration-for-ecommerce-sellers' },
+  { platformId: 'business', name: 'GST Compliance for Sellers', slug: 'gst-compliance-for-sellers' },
+  { platformId: 'business', name: 'PPOB APOB Registration', slug: 'ppob-apob-registration-service' },
+  { platformId: 'business', name: 'Ecommerce Business Consulting', slug: 'ecommerce-business-consulting' }
 ];
 
 export const locations = [
@@ -92,7 +99,12 @@ export const locations = [
 "thane","bhopal","visakhapatnam","patna","vadodara","ludhiana",
 "agra","nashik","faridabad","meerut","rajkot","kalyan","vasai",
 "varanasi","srinagar","aurangabad","dhanbad","amritsar","navi-mumbai",
-"allahabad","ranchi","howrah","coimbatore","jabalpur","gwalior"
+"allahabad","ranchi","howrah","coimbatore","jabalpur","gwalior",
+"vijayawada","madurai","raipur","kota","guwahati","chandigarh",
+"noida","gurgaon","trivandrum","mysore","tiruchirappalli","salem",
+"hubli","mangalore","dehradun","jalandhar","udaipur","bhubaneswar",
+"cuttack","shimla","goa","pondicherry","siliguri","tirupati",
+"warangal","belgaum","davangere","bhilai","rourkela","bokaro"
 ];
 
 export const blogs = [
@@ -108,7 +120,5 @@ export const blogs = [
   { title: 'How to Scale Ecommerce Business', slug: 'how-to-scale-ecommerce-business' },
   { title: 'Amazon FBA vs FBM Guide', slug: 'amazon-fba-vs-fbm-guide' },
   { title: 'Amazon SEO Strategy Guide', slug: 'amazon-seo-strategy-guide' },
-  { title: 'Ecommerce Inventory Management Guide', slug: 'ecommerce-inventory-management-guide' },
+  { title: 'Ecommerce Inventory Management Guide', slug: 'ecommerce-inventory-management-guide' }
 ];
-
-
