@@ -1,12 +1,9 @@
-import { motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === "/";
 
   const links = [
     { name: "Home", href: "/" },
@@ -51,7 +48,6 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* CTA */}
             <Link
               to="/contact-click-commerce-hub"
               className="bg-orange-600 hover:bg-orange-700 text-white text-sm px-5 py-2.5 rounded-full font-semibold shadow-md transition"
@@ -74,11 +70,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="xl:hidden bg-white border-t border-gray-100"
-        >
+        <div className="xl:hidden bg-white border-t border-gray-100">
 
           <div className="flex flex-col px-6 py-6 space-y-4">
 
@@ -103,7 +95,7 @@ export default function Navbar() {
 
           </div>
 
-        </motion.div>
+        </div>
       )}
     </nav>
   );
