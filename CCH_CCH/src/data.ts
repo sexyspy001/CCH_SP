@@ -86,7 +86,13 @@ export const allServicePages = [
 ];
 
 export const locations = [
-  'india', 'delhi', 'mumbai', 'bangalore', 'hyderabad', 'pune', 'chennai', 'kolkata', 'ahmedabad', 'noida', 'gurgaon', 'jaipur', 'lucknow', 'patna', 'surat'
+"india",
+"delhi","mumbai","bangalore","hyderabad","pune","chennai","kolkata",
+"ahmedabad","surat","jaipur","lucknow","kanpur","nagpur","indore",
+"thane","bhopal","visakhapatnam","patna","vadodara","ludhiana",
+"agra","nashik","faridabad","meerut","rajkot","kalyan","vasai",
+"varanasi","srinagar","aurangabad","dhanbad","amritsar","navi-mumbai",
+"allahabad","ranchi","howrah","coimbatore","jabalpur","gwalior"
 ];
 
 export const blogs = [
