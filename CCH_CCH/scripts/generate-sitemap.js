@@ -4,7 +4,7 @@ import {
   allServicePages,
   blogs,
   locations
-} from "../src/data.js";
+} from "../src/data.ts";
 
 const domain = "https://clickcommercehub.dpdns.org";
 
