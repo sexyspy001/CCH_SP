@@ -31,12 +31,12 @@ export default function Navbar() {
                 src="https://raw.githubusercontent.com/sexyspy001/clickcommercehub_logo/4ab5caadb309169d25eab1f33ca1beab7177f861/cch-logoog%20(2).png"
                 alt="Click Commerce Hub"
               />
-              <span className="font-bold text-xl text-gray-900 hidden 1xl:block">Click Commerce Hub</span>
+              <span className="font-bold text-xl text-gray-900 hidden 2xl:block">Click Commerce Hub</span>
             </Link>
           </div>
           
           {/* Desktop menu */}
-          <div className="hidden xl:flex items-center space-x-6">
+          <div className="hidden xl:flex items-center space-x-4">
             {links.map((link) => (
               link.href.startsWith('/') && !link.href.includes('#') ? (
                 <Link
