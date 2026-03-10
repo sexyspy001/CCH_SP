@@ -31,7 +31,7 @@ export default function Navbar() {
                 src="https://raw.githubusercontent.com/sexyspy001/clickcommercehub_logo/4ab5caadb309169d25eab1f33ca1beab7177f861/cch-logoog%20(2).png"
                 alt="Click Commerce Hub"
               />
-              <span className="font-bold text-xl text-gray-900 hidden 2xl:block">Click Commerce Hub</span>
+              <span className="font-bold text-xl text-gray-900 hidden lg:block">Click Commerce Hub</span>
             </Link>
           </div>
           
