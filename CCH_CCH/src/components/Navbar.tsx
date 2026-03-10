@@ -1,95 +1,112 @@
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { motion } from 'motion/react';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Ecommerce", href: "/ecommerce" },
-    { name: "Quick Commerce", href: "/quick-commerce" },
-    { name: "Services", href: "/services" },
-    { name: "AI Tools", href: "/ai-tools" },
-    { name: "Insights", href: "/blog" },
-    { name: "Contact", href: "/contact-click-commerce-hub" }
+    { name: 'Home', href: isHome ? '#home' : '/#home' },
+    { name: 'About', href: '/about' },
+    { name: 'Ecommerce', href: '/ecommerce' },
+    { name: 'Quick Commerce', href: '/quick-commerce' },
+    { name: 'All Services', href: '/services' },
+    { name: 'AI Tools', href: '/ai-tools' },
+    { name: 'Pricing', href: isHome ? '#pricing' : '/#pricing' },
+    { name: 'Insights', href: '/blog' },
+    { name: 'Contact', href: '/contact-click-commerce-hub' },
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/70 border-b border-gray-200">
+    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <img
-              src="https://raw.githubusercontent.com/sexyspy001/clickcommercehub_logo/4ab5caadb309169d25eab1f33ca1beab7177f861/cch-logoog%20(2).png"
-              className="h-10 w-auto"
-              alt="Click Commerce Hub"
-            />
-            <span className="font-semibold text-lg text-gray-900 hidden xl:block">
-              Click Commerce Hub
-            </span>
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden xl:flex items-center gap-8">
+        <div className="flex justify-between h-20">
+          <div className="flex items-center">
+            <Link to="/" className="flex-shrink-0 flex items-center gap-3">
+              <img
+                className="h-12 w-auto"
+                src="https://raw.githubusercontent.com/sexyspy001/clickcommercehub_logo/4ab5caadb309169d25eab1f33ca1beab7177f861/cch-logoog%20(2).png"
+                alt="Click Commerce Hub"
+              />
+              <span className="font-bold text-xl text-gray-900 hidden 2xl:block">Click Commerce Hub</span>
+            </Link>
+          </div>
+          
+          {/* Desktop menu */}
+          <div className="hidden xl:flex items-center space-x-6">
             {links.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="text-sm font-medium text-gray-600 hover:text-orange-600 transition"
-              >
-                {link.name}
-              </Link>
+              link.href.startsWith('/') && !link.href.includes('#') ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-gray-600 hover:text-orange-600 px-2 py-2 text-sm font-medium transition-colors whitespace-nowrap"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-600 hover:text-orange-600 px-2 py-2 text-sm font-medium transition-colors whitespace-nowrap"
+                >
+                  {link.name}
+                </a>
+              )
             ))}
-
             <Link
               to="/contact-click-commerce-hub"
-              className="bg-orange-600 hover:bg-orange-700 text-white text-sm px-5 py-2.5 rounded-full font-semibold shadow-md transition"
+              className="bg-orange-600 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-orange-700 transition-colors shadow-sm whitespace-nowrap ml-2"
             >
               Get Started
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="xl:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={26} /> : <Menu size={26} />}
-          </button>
-
+          {/* Mobile menu button */}
+          <div className="flex items-center xl:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-600 hover:text-gray-900 focus:outline-none p-2"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {isOpen && (
-        <div className="xl:hidden bg-white border-t border-gray-100">
-          <div className="flex flex-col px-6 py-6 space-y-4">
-
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="xl:hidden bg-white border-b border-gray-100"
+        >
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {links.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-gray-700 text-base font-medium hover:text-orange-600"
-              >
-                {link.name}
-              </Link>
+              link.href.startsWith('/') && !link.href.includes('#') ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-md"
+                >
+                  {link.name}
+                </a>
+              )
             ))}
-
-            <Link
-              to="/contact-click-commerce-hub"
-              onClick={() => setIsOpen(false)}
-              className="bg-orange-600 text-white text-center py-3 rounded-full font-semibold"
-            >
-              Get Started
-            </Link>
-
           </div>
-        </div>
+        </motion.div>
       )}
     </nav>
   );
