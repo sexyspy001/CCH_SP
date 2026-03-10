@@ -19,7 +19,6 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/70 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="flex justify-between items-center h-20">
 
           {/* Logo */}
@@ -29,7 +28,6 @@ export default function Navbar() {
               className="h-10 w-auto"
               alt="Click Commerce Hub"
             />
-
             <span className="font-semibold text-lg text-gray-900 hidden xl:block">
               Click Commerce Hub
             </span>
@@ -37,7 +35,6 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden xl:flex items-center gap-8">
-
             {links.map((link) => (
               <Link
                 key={link.name}
@@ -54,15 +51,14 @@ export default function Navbar() {
             >
               Get Started
             </Link>
-
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile Menu Button */}
           <button
             className="xl:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={26}/> : <Menu size={26}/>}
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
 
         </div>
@@ -71,7 +67,6 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="xl:hidden bg-white border-t border-gray-100">
-
           <div className="flex flex-col px-6 py-6 space-y-4">
 
             {links.map((link) => (
@@ -94,7 +89,6 @@ export default function Navbar() {
             </Link>
 
           </div>
-
         </div>
       )}
     </nav>
